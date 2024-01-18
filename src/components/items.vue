@@ -4,15 +4,36 @@
     </div>
   </template>
   
-  <script setup>
+  <script lang="ts">
+  
   import ImageItem from './ImageItem.vue';
   import { ref } from 'vue';
-  
-  const images = ref([
-    { id: 1, url: 'https://picsum.photos/id/45/4592/2576' },
-    { id: 2, url: 'https://picsum.photos/id/46/3264/2448' },
-    { id: 3, url: 'https://picsum.photos/id/47/4272/2848' },
-    { id: 4, url: 'https://picsum.photos/id/49/1280/792' },
+  export default {
+    data() {
+        return {
+             images:ref<{id:number ,url: string  }[]>([]),
+        }
+    },
+  methods:{
+    fillArray(){
+      for (let index = 0; index < 15; index++) {
+        let element : {id:number ,url: string  }={id:index,url:"https://picsum.photos/300/" };
+        this.images.push(element);
+        
+      }
 
-  ]);
+    }
+
+
+  },
+  mounted() {
+      fillArray();
+  },
+  components: {
+    ImageItem 
+    }
+ 
+
+  }
+
   </script>

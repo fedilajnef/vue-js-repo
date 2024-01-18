@@ -1,4 +1,19 @@
 <script lang="ts">
+export default {
+methods: {
+        // Méthode appelée lorsque la touche "Enter" est pressée.
+        styleimage(style: any) {
+            // Appelle la fonction reçue en tant que propriété du parent (addFunction).
+         console.log(style)
+         
+    }
+}
+
+
+
+
+
+}
 
 </script>
 
@@ -12,7 +27,10 @@
         py-2
         px-4
         rounded
-            ">all</button>
+        mx-10
+        
+    "  
+     @click="styleimage( 'all' )">all</button>
     
     <button class="
         bg-blue-500
@@ -22,7 +40,9 @@
         py-2
         px-4
         rounded
-            ">Grayscale</button> <button class="
+        mx-10 "
+            @click="styleimage( 'Grayscale' )"
+            >Grayscale</button> <button class="
         bg-blue-500
         hover:bg-blue-700
         text-white
@@ -30,7 +50,8 @@
         py-2
         px-4
         rounded
-    
-    ">Blur</button>
+        mx-10"
+        @click="styleimage( 'Blur' )"
+    >Blur</button>
         
 </template>
