@@ -1,19 +1,17 @@
-<script setup lang="ts">
+<script lang="ts">
 import Buttons from './components/Buttons.vue'
-import items from './components/items.vue'
- 
+import Items from './components/Items.vue'
+export default {
+  components: {
+    Items,
+    Buttons,
+  }
+}
 </script>
 
 <template>
- <div class="w-2/3 mx-auto  text-center items-center  border border-stone-950">
+  <div class="max-w-[70%] w-fit mx-auto border-x-4 border-slate-200">
   <Buttons/>
-
-
-  <items/>
-
-  
-
-  </div>
-
+  <Items/>
+</div>
 </template>
-
